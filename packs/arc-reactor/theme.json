@@ -1,0 +1,32 @@
+{
+  "name": "Arc Reactor",
+  "version": 1,
+  "description": "Glowing arc reactor emblem, gold ring.",
+  "tags": [
+    "marvel",
+    "iron man",
+    "gold",
+    "emblem"
+  ],
+  "style": "classic",
+  "colors": {
+    "bg": "#07080c",
+    "surface": "#11131a",
+    "edge": "#2b2416",
+    "text": "#ffffff",
+    "muted": "#d6c9a8",
+    "faint": "#7d7356",
+    "track": "#231f14",
+    "accent": "#f6b42c",
+    "warn": "#ff8a1a",
+    "bad": "#ff4d4d",
+    "info": "#5fd0ff",
+    "gold": "#ffe08a"
+  },
+  "art": {
+    "image": "art.jpg",
+    "kind": "emblem",
+    "cat": false,
+    "dim": 0.45
+  }
+}

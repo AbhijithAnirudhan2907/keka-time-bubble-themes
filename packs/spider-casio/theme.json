@@ -1,0 +1,37 @@
+{
+  "name": "Spider-Man Casio",
+  "version": 1,
+  "description": "Casio-style Spider-Man watch face; the time sits in its display box.",
+  "tags": [
+    "marvel",
+    "spider-man",
+    "casio",
+    "red",
+    "watch"
+  ],
+  "style": "watch",
+  "colors": {
+    "bg": "#000000",
+    "surface": "#0d0d10",
+    "edge": "#1b1b1f",
+    "text": "#ffffff",
+    "muted": "#b4b4bb",
+    "faint": "#6b6b72",
+    "track": "#24242a",
+    "accent": "#e8202a",
+    "warn": "#f5b324",
+    "bad": "#ff3b3b",
+    "info": "#1e88e5",
+    "gold": "#f5b324"
+  },
+  "art": {
+    "image": "art.jpg",
+    "kind": "face",
+    "slot": {
+      "x": 6,
+      "y": 66.5,
+      "w": 88,
+      "h": 22.5
+    }
+  }
+}

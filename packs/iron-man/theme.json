@@ -1,0 +1,36 @@
+{
+  "name": "Iron Man",
+  "version": 1,
+  "description": "Neon orange Iron Man watch face.",
+  "tags": [
+    "marvel",
+    "iron man",
+    "orange",
+    "watch"
+  ],
+  "style": "watch",
+  "colors": {
+    "bg": "#0f0f0f",
+    "surface": "#171717",
+    "edge": "#242424",
+    "text": "#ffffff",
+    "muted": "#c2b6ad",
+    "faint": "#74695f",
+    "track": "#2a2420",
+    "accent": "#ff6a1a",
+    "warn": "#ffb02e",
+    "bad": "#ff3b3b",
+    "info": "#4fc3ff",
+    "gold": "#ffc83d"
+  },
+  "art": {
+    "image": "art.jpg",
+    "kind": "face",
+    "slot": {
+      "x": 8,
+      "y": 66,
+      "w": 84,
+      "h": 28
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Doctor Strange",
+  "version": 1,
+  "description": "Sanctum window emblem, mystic blue ring.",
+  "tags": [
+    "marvel",
+    "doctor strange",
+    "blue",
+    "emblem"
+  ],
+  "style": "classic",
+  "colors": {
+    "bg": "#111213",
+    "surface": "#18191b",
+    "edge": "#2a2c30",
+    "text": "#ffffff",
+    "muted": "#b3c4d1",
+    "faint": "#677684",
+    "track": "#1d2833",
+    "accent": "#1f8fd6",
+    "warn": "#f0a030",
+    "bad": "#ff5a4f",
+    "info": "#5ec8ff",
+    "gold": "#f0b429"
+  },
+  "art": {
+    "image": "art.jpg",
+    "kind": "emblem",
+    "cat": false,
+    "dim": 0.45
+  }
+}

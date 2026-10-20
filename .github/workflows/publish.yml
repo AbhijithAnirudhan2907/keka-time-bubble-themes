@@ -1,0 +1,46 @@
+# Checks every pack and publishes the theme site (catalog, packs, previews, gallery) to GitHub Pages.
+# Pull requests only run the checks; a push to main publishes. The app downloads from the Pages site.
+name: Check and publish themes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install ImageMagick (previews)
+        run: command -v convert >/dev/null || (sudo apt-get update -q && sudo apt-get install -yq imagemagick)
+      - name: Check packs and build the site
+        run: node scripts/build.js --require-thumbs
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

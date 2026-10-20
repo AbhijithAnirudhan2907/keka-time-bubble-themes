@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keka Time Bubble Themes</title>
+<meta name="description" content="Themes for Keka Time Bubble. Get them in the app: dashboard › Themes.">
+<style>
+  :root {
+    --bg: #0b0b0c; --card: #161618; --edge: #26262a; --text: #f4f4f5; --muted: #a1a1aa; --faint: #6b6b72;
+    --accent: #30d158; --chip: #1f1f22;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) { --bg: #f6f6f4; --card: #ffffff; --edge: #e4e4e0; --text: #18181b; --muted: #52525b; --faint: #8a8a92; --chip: #f0f0ec; }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font: 14px/1.45 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 16px 48px; }
+  header { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; justify-content: space-between; margin-bottom: 22px; }
+  h1 { font-size: 24px; font-weight: 650; letter-spacing: -0.3px; }
+  header p { color: var(--muted); margin-top: 4px; max-width: 520px; }
+  kbd { font: inherit; font-weight: 600; color: var(--text); }
+  input { width: 260px; max-width: 100%; padding: 9px 12px; border-radius: 10px; border: 1px solid var(--edge);
+    background: var(--card); color: var(--text); font: inherit; }
+  input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--edge); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+  .pic { aspect-ratio: 4 / 3; background: #000 center / contain no-repeat; position: relative; }
+  .pic.none { display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .pic.none i { width: 22px; height: 22px; border-radius: 50%; }
+  .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .name { font-weight: 650; }
+  .meta { color: var(--faint); font-size: 12px; white-space: nowrap; }
+  .desc { color: var(--muted); font-size: 13px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 4px; }
+  .tags span { font-size: 11px; padding: 2px 8px; border-radius: 99px; background: var(--chip); color: var(--muted); }
+  .empty, .err { color: var(--muted); padding: 40px 0; text-align: center; grid-column: 1 / -1; }
+  footer { color: var(--faint); font-size: 12px; margin-top: 28px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Keka Time Bubble Themes</h1>
+      <p>Get any of these in the app: open the dashboard, choose <kbd>Themes</kbd> in the sidebar, then <kbd>Get</kbd>.
+        Only the themes you pick are downloaded.</p>
+    </div>
+    <input id="q" type="search" placeholder="Search themes" aria-label="Search themes">
+  </header>
+  <main class="grid" id="grid"><div class="empty">Loading…</div></main>
+  <footer>Want to add one? See the <a href="https://github.com/AbhijithAnirudhan2907/keka-time-bubble-themes">themes repo</a>.</footer>
+</div>
+<script>
+  'use strict';
+  var grid = document.getElementById('grid'), q = document.getElementById('q'), all = [];
+  var STYLE = { classic: 'Classic', watch: 'Watch face' };
+
+  function card(t) {
+    var c = document.createElement('article'); c.className = 'card';
+    var pic = document.createElement('div'); pic.className = 'pic';
+    if (t.thumb) pic.style.backgroundImage = 'url("' + encodeURI(t.thumb) + '")';
+    else {
+      pic.classList.add('none');
+      ['accent', 'info', 'gold'].forEach(function (k) {
+        if (!t.colors || !t.colors[k]) return;
+        var i = document.createElement('i'); i.style.background = t.colors[k]; pic.appendChild(i);
+      });
+      if (t.colors && t.colors.bg) pic.style.background = t.colors.bg;
+    }
+    var body = document.createElement('div'); body.className = 'body';
+    var top = document.createElement('div'); top.className = 'top';
+    var name = document.createElement('span'); name.className = 'name'; name.textContent = t.name;
+    var meta = document.createElement('span'); meta.className = 'meta';
+    meta.textContent = (STYLE[t.style] || 'Any style') + ' · ' + Math.max(1, Math.round(t.size / 1024)) + ' KB';
+    top.appendChild(name); top.appendChild(meta);
+    var desc = document.createElement('p'); desc.className = 'desc'; desc.textContent = t.description || '';
+    var tags = document.createElement('div'); tags.className = 'tags';
+    (t.tags || []).forEach(function (x) { var s = document.createElement('span'); s.textContent = x; tags.appendChild(s); });
+    body.appendChild(top); body.appendChild(desc); body.appendChild(tags);
+    c.appendChild(pic); c.appendChild(body);
+    return c;
+  }
+
+  function show() {
+    var words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
+    var list = all.filter(function (t) {
+      var hay = [t.name, t.description, (t.tags || []).join(' '), STYLE[t.style] || ''].join(' ').toLowerCase();
+      return words.every(function (w) { return hay.indexOf(w) >= 0; });
+    });
+    grid.textContent = '';
+    if (!list.length) { var e = document.createElement('div'); e.className = 'empty'; e.textContent = 'No themes match.'; grid.appendChild(e); return; }
+    list.forEach(function (t) { grid.appendChild(card(t)); });
+  }
+
+  q.addEventListener('input', show);
+  fetch('index.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (c) {
+    all = c.themes || []; show();
+  }).catch(function () {
+    grid.textContent = ''; var e = document.createElement('div'); e.className = 'err';
+    e.textContent = 'Could not load the theme list. Try again in a moment.'; grid.appendChild(e);
+  });
+</script>
+</body>
+</html>

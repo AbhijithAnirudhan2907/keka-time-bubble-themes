@@ -1,0 +1,32 @@
+{
+  "name": "Spider-Man Mask",
+  "version": 1,
+  "description": "Spider-Man mask emblem behind the time, red ring.",
+  "tags": [
+    "marvel",
+    "spider-man",
+    "red",
+    "emblem"
+  ],
+  "style": "classic",
+  "colors": {
+    "bg": "#0a0a0c",
+    "surface": "#141418",
+    "edge": "#2a1416",
+    "text": "#ffffff",
+    "muted": "#c9b8b8",
+    "faint": "#776a6a",
+    "track": "#2a1a1c",
+    "accent": "#e2231a",
+    "warn": "#f5b324",
+    "bad": "#ff3b3b",
+    "info": "#ffffff",
+    "gold": "#f5b324"
+  },
+  "art": {
+    "image": "art.jpg",
+    "kind": "emblem",
+    "cat": false,
+    "dim": 0.5
+  }
+}

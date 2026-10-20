@@ -71,6 +71,7 @@ function check(id) {
     if (a.slot != null && !['x', 'y', 'w', 'h'].every((k) => typeof a.slot[k] === 'number' && a.slot[k] >= 0 && a.slot[k] <= 100)) errs.push('art.slot: x, y, w, h as 0-100');
     if (a.dim != null && !(typeof a.dim === 'number' && a.dim >= 0 && a.dim <= 0.9)) errs.push('art.dim: 0 to 0.9');
     if (a.cat != null && typeof a.cat !== 'boolean') errs.push('art.cat: true or false');
+    if (a.readout != null && a.readout !== 'lcd') errs.push('art.readout: lcd (or leave it out)');
   }
   const extra = fs.readdirSync(dir).filter((f) => !files.some((x) => x.name === f));
   if (extra.length) errs.push('unexpected files: ' + extra.join(', ') + ' (a pack is theme.json + one image)');

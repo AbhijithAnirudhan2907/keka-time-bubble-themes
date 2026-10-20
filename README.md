@@ -13,7 +13,7 @@ Gallery: https://abhijithanirudhan2907.github.io/keka-time-bubble-themes/
 | Spider-Man Mask | Classic | Spider-Man mask emblem behind the time, red ring |
 | Doctor Strange | Classic | Sanctum window emblem, mystic blue ring |
 | Arc Reactor | Classic | Glowing arc reactor emblem, gold ring |
-| Spider-Man Casio | Watch face | Casio-style Spider-Man face; the time sits in its display box |
+| Spider-Man Casio | Watch face | Casio-style Spider-Man face with an LCD readout (date, in, break, done, week) |
 | Miles Morales | Watch face | Miles Morales face with dial numerals |
 | Iron Man | Watch face | Neon orange Iron Man face |
 
@@ -56,6 +56,7 @@ has it.
 | `art.slot` | Where the live time sits on a face, in % of the face: `x`, `y`, width `w`, height `h`. |
 | `art.dim` | 0–0.9: how much an emblem is darkened behind the time (default 0.5). |
 | `art.cat` | `false` hides the Classic cat. |
+| `art.readout` | `lcd` (faces only): an LCD-style readout with the date and an IN / BREAK / DONE / WEEK strip. Needs app v2.11.0 or later. |
 
 ## How it is published
 

@@ -19,12 +19,16 @@ Gallery: https://abhijithanirudhan2907.github.io/keka-time-bubble-themes/
 
 ## Adding or changing a theme
 
-1. Add a folder under `packs/` named after the theme id (lowercase letters, digits, `-`), holding
-   `theme.json` and at most one image (JPG, PNG or WebP, up to 2 MB).
+1. Add a folder under `packs/` named after the theme id (lowercase letters, digits, `-`; not starting
+   with `my-`, which is kept for themes people make in the app), holding `theme.json` and at most one
+   image (JPG, PNG or WebP, up to 2 MB; an animated WebP plays in the bubble).
    It may also hold one sound (MP3, Ogg or WAV, up to 1.5 MB) for the bubble's play button.
 2. Run `node scripts/build.js` to check it (and preview `_site/index.html` in a browser).
 3. Push to `main` (or open a pull request; the checks run on it). The site updates in about a minute,
    and the app sees the new theme the next time someone opens **Themes**.
+
+Anyone can also turn their own picture into a theme in the app (**Themes > Make your own theme**,
+app v2.13.0 or later); those stay on their computer and never come here.
 
 When you change an existing theme, raise its `version`: the app then shows **Update** to everyone who
 has it.

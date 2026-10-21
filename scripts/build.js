@@ -43,6 +43,7 @@ function soundType(b) {
 function check(id) {
   const errs = [], dir = path.join(packsDir, id);
   if (!ID.test(id)) return { errs: ['folder name must be lowercase letters, digits and -'] };
+  if (id.startsWith('my-')) return { errs: ['folder names starting with my- are kept for themes people make in the app'] };
   const jf = path.join(dir, 'theme.json');
   if (!fs.existsSync(jf)) return { errs: ['missing theme.json'] };
   if (fs.statSync(jf).size > JSON_MAX) return { errs: ['theme.json is over 64 KB'] };

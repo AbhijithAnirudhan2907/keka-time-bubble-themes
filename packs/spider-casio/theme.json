@@ -1,13 +1,14 @@
 {
   "name": "Spider-Man Casio",
-  "version": 2,
+  "version": 3,
   "description": "Casio-style Spider-Man face with an LCD readout: date, effective time, and in / break / done / week.",
   "tags": [
     "marvel",
     "spider-man",
     "casio",
     "red",
-    "watch"
+    "watch",
+    "tune"
   ],
   "style": "watch",
   "colors": {
@@ -34,5 +35,9 @@
       "h": 22.5
     },
     "readout": "lcd"
+  },
+  "sound": {
+    "file": "tune.mp3",
+    "volume": 0.8
   }
 }

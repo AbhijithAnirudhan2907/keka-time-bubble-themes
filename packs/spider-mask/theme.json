@@ -1,12 +1,13 @@
 {
   "name": "Spider-Man Mask",
-  "version": 1,
+  "version": 2,
   "description": "Spider-Man mask emblem behind the time, red ring.",
   "tags": [
     "marvel",
     "spider-man",
     "red",
-    "emblem"
+    "emblem",
+    "tune"
   ],
   "style": "classic",
   "colors": {
@@ -28,5 +29,9 @@
     "kind": "emblem",
     "cat": false,
     "dim": 0.5
+  },
+  "sound": {
+    "file": "tune.mp3",
+    "volume": 0.8
   }
 }

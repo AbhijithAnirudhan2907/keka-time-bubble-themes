@@ -10,11 +10,11 @@ Gallery: https://abhijithanirudhan2907.github.io/keka-time-bubble-themes/
 
 | Theme | Style | |
 |---|---|---|
-| Spider-Man Mask | Classic | Spider-Man mask emblem behind the time, red ring |
+| Spider-Man Mask | Classic | Spider-Man mask emblem behind the time, red ring; ♪ Homecoming tune |
 | Doctor Strange | Classic | Sanctum window emblem, mystic blue ring |
 | Arc Reactor | Classic | Glowing arc reactor emblem, gold ring |
-| Spider-Man Casio | Watch face | Casio-style Spider-Man face with an LCD readout (date, in, break, done, week) |
-| Miles Morales | Watch face | Miles Morales face with dial numerals |
+| Spider-Man Casio | Watch face | Casio-style Spider-Man face with an LCD readout (date, in, break, done, week); ♪ Homecoming tune |
+| Miles Morales | Watch face | Miles Morales face with dial numerals; ♪ Homecoming tune |
 | Iron Man | Watch face | Neon orange Iron Man face |
 
 ## Adding or changing a theme

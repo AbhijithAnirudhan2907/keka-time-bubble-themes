@@ -1,13 +1,14 @@
 {
   "name": "Miles Morales",
-  "version": 1,
+  "version": 2,
   "description": "Miles Morales watch face with dial numerals.",
   "tags": [
     "marvel",
     "spider-man",
     "miles",
     "red",
-    "watch"
+    "watch",
+    "tune"
   ],
   "style": "watch",
   "colors": {
@@ -33,5 +34,9 @@
       "w": 84,
       "h": 22
     }
+  },
+  "sound": {
+    "file": "tune.mp3",
+    "volume": 0.8
   }
 }

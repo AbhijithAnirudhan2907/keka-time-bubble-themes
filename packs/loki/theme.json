@@ -1,12 +1,13 @@
 {
   "name": "Loki",
   "version": 1,
-  "description": "Loki, God of Stories, on the throne among the green time-threads, which shimmer. Weaves the bubble along time threads.",
+  "description": "Loki, God of Stories: the throne, the Sacred Timeline and the TVA door, fading into one another. Weaves the bubble along time threads.",
   "tags": [
     "marvel",
     "loki",
-    "green",
     "tva",
+    "green",
+    "gold",
     "face",
     "travel"
   ],
@@ -32,9 +33,9 @@
     "cat": false,
     "slot": {
       "x": 6,
-      "y": 75,
+      "y": 76,
       "w": 88,
-      "h": 19
+      "h": 18
     },
     "readout": "lcd"
   }

@@ -1,12 +1,13 @@
 {
   "name": "Arc Reactor",
-  "version": 1,
+  "version": 2,
   "description": "Glowing arc reactor emblem, gold ring.",
   "tags": [
     "marvel",
     "iron man",
     "gold",
-    "emblem"
+    "emblem",
+    "travel"
   ],
   "style": "classic",
   "colors": {
@@ -28,5 +29,6 @@
     "kind": "emblem",
     "cat": false,
     "dim": 0.45
-  }
+  },
+  "move": "flight"
 }

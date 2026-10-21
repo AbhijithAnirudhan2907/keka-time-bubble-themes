@@ -1,6 +1,6 @@
 {
   "name": "Miles Morales",
-  "version": 3,
+  "version": 4,
   "description": "Miles Morales watch face with dial numerals. The eyes blink.",
   "tags": [
     "marvel",
@@ -9,7 +9,8 @@
     "red",
     "watch",
     "tune",
-    "blink"
+    "blink",
+    "travel"
   ],
   "style": "watch",
   "colors": {
@@ -39,5 +40,6 @@
   "sound": {
     "file": "tune.mp3",
     "volume": 0.8
-  }
+  },
+  "move": "web"
 }

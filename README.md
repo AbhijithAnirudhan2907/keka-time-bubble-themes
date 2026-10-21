@@ -62,6 +62,7 @@ has it.
 | `art.dim` | 0–0.9: how much an emblem is darkened behind the time (default 0.5). |
 | `art.cat` | `false` hides the Classic cat. |
 | `sound.file`, `sound.volume` | Optional tune for the play button on the bubble (next to ⚙). `volume` 0–1, default 0.8. Needs app v2.12.0 or later. |
+| `move` | Optional travel button on the bubble: click it, then any spot on the screen, and the bubble goes there. `web` (Spider-Man: web strand + swing), `portal` (Doctor Strange: sling-ring portals), `flight` (Iron Man: repulsor flight). Needs app v2.14.0 or later. |
 | `art.readout` | `lcd` (faces only): an LCD-style readout with the date and an IN / BREAK / DONE / WEEK strip. Needs app v2.11.0 or later. |
 
 ## How it is published

@@ -1,12 +1,13 @@
 {
   "name": "Doctor Strange",
-  "version": 1,
+  "version": 2,
   "description": "Sanctum window emblem, mystic blue ring.",
   "tags": [
     "marvel",
     "doctor strange",
     "blue",
-    "emblem"
+    "emblem",
+    "travel"
   ],
   "style": "classic",
   "colors": {
@@ -28,5 +29,6 @@
     "kind": "emblem",
     "cat": false,
     "dim": 0.45
-  }
+  },
+  "move": "portal"
 }

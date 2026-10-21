@@ -1,6 +1,6 @@
 {
   "name": "Spider-Man Mask",
-  "version": 3,
+  "version": 4,
   "description": "Spider-Man mask emblem behind the time, red ring. The eyes blink.",
   "tags": [
     "marvel",
@@ -8,7 +8,8 @@
     "red",
     "emblem",
     "tune",
-    "blink"
+    "blink",
+    "travel"
   ],
   "style": "classic",
   "colors": {
@@ -34,5 +35,6 @@
   "sound": {
     "file": "tune.mp3",
     "volume": 0.8
-  }
+  },
+  "move": "web"
 }

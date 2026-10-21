@@ -1,12 +1,13 @@
 {
   "name": "Iron Man",
-  "version": 1,
+  "version": 2,
   "description": "Neon orange Iron Man watch face.",
   "tags": [
     "marvel",
     "iron man",
     "orange",
-    "watch"
+    "watch",
+    "travel"
   ],
   "style": "watch",
   "colors": {
@@ -32,5 +33,6 @@
       "w": 84,
       "h": 28
     }
-  }
+  },
+  "move": "flight"
 }

@@ -1,13 +1,14 @@
 {
   "name": "Golden Chameleon",
-  "version": 1,
-  "description": "Yellow chameleon with big blue eyes on a branch, the time above it.",
+  "version": 2,
+  "description": "Yellow chameleon with big blue eyes on a branch, the time above it. Its tongue catches a fly to move the bubble.",
   "tags": [
     "animal",
     "chameleon",
     "yellow",
     "cute",
-    "face"
+    "face",
+    "travel"
   ],
   "style": "watch",
   "colors": {
@@ -28,7 +29,13 @@
     "image": "art.jpg",
     "kind": "face",
     "cat": false,
-    "slot": { "x": 8, "y": 9, "w": 84, "h": 24 },
+    "slot": {
+      "x": 8,
+      "y": 9,
+      "w": 84,
+      "h": 24
+    },
     "readout": "lcd"
-  }
+  },
+  "move": "tongue"
 }

@@ -19,6 +19,7 @@ const requireThumbs = process.argv.includes('--require-thumbs');
 const ID = /^[a-z0-9-]{1,40}$/;
 const JSON_MAX = 64 * 1024;
 const IMAGE_MAX = 2 * 1024 * 1024;
+const SOUND_MAX = 1536 * 1024;
 const SURFACE = ['bg', 'surface', 'edge', 'text', 'muted', 'faint', 'track'];
 const ACCENT = ['accent', 'warn', 'bad', 'info', 'gold'];
 const COLOR = /^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
@@ -29,6 +30,13 @@ function imageType(b) {
   if (b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return 'jpeg';
   if (b.slice(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) return 'png';
   if (b.slice(0, 4).toString() === 'RIFF' && b.slice(8, 12).toString() === 'WEBP') return 'webp';
+  return null;
+}
+
+function soundType(b) {
+  if (b.slice(0, 3).toString() === 'ID3' || (b[0] === 0xff && (b[1] & 0xe0) === 0xe0)) return 'mp3';
+  if (b.slice(0, 4).toString() === 'OggS') return 'ogg';
+  if (b.slice(0, 4).toString() === 'RIFF' && b.slice(8, 12).toString() === 'WAVE') return 'wav';
   return null;
 }
 
@@ -73,8 +81,20 @@ function check(id) {
     if (a.cat != null && typeof a.cat !== 'boolean') errs.push('art.cat: true or false');
     if (a.readout != null && a.readout !== 'lcd') errs.push('art.readout: lcd (or leave it out)');
   }
+  if (t.sound != null) {
+    const sf = t.sound.file;
+    if (typeof sf !== 'string' || !/^[\w.-]+\.(mp3|ogg|wav)$/i.test(sf) || sf.startsWith('.')) errs.push('sound.file: a file name in this folder (.mp3, .ogg or .wav)');
+    else if (!fs.existsSync(path.join(dir, sf))) errs.push('sound.file: ' + sf + ' not found');
+    else {
+      const b = fs.readFileSync(path.join(dir, sf));
+      if (b.length > SOUND_MAX) errs.push('sound.file: over 1.5 MB (trim it or lower the bitrate)');
+      if (!soundType(b)) errs.push('sound.file: not a real MP3, Ogg or WAV');
+      files.push({ name: sf, size: b.length });
+    }
+    if (t.sound.volume != null && !(typeof t.sound.volume === 'number' && t.sound.volume >= 0 && t.sound.volume <= 1)) errs.push('sound.volume: 0 to 1');
+  }
   const extra = fs.readdirSync(dir).filter((f) => !files.some((x) => x.name === f));
-  if (extra.length) errs.push('unexpected files: ' + extra.join(', ') + ' (a pack is theme.json + one image)');
+  if (extra.length) errs.push('unexpected files: ' + extra.join(', ') + ' (a pack is theme.json, one image and one sound at most)');
   return { errs, t, files, image };
 }
 
@@ -111,7 +131,7 @@ const themes = results.map((r) => {
   return {
     id: r.id, name: r.t.name, version: r.t.version, description: r.t.description || '', tags: r.t.tags || [],
     style: r.t.style || null, kind: r.t.art ? r.t.art.kind : null, colors: r.t.colors || {},
-    thumb: thumbPath, files: r.files, size: r.files.reduce((s, f) => s + f.size, 0),
+    thumb: thumbPath, sound: !!r.t.sound, files: r.files, size: r.files.reduce((s, f) => s + f.size, 0),
   };
 });
 

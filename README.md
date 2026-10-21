@@ -21,6 +21,7 @@ Gallery: https://abhijithanirudhan2907.github.io/keka-time-bubble-themes/
 
 1. Add a folder under `packs/` named after the theme id (lowercase letters, digits, `-`), holding
    `theme.json` and at most one image (JPG, PNG or WebP, up to 2 MB).
+   It may also hold one sound (MP3, Ogg or WAV, up to 1.5 MB) for the bubble's play button.
 2. Run `node scripts/build.js` to check it (and preview `_site/index.html` in a browser).
 3. Push to `main` (or open a pull request; the checks run on it). The site updates in about a minute,
    and the app sees the new theme the next time someone opens **Themes**.
@@ -56,6 +57,7 @@ has it.
 | `art.slot` | Where the live time sits on a face, in % of the face: `x`, `y`, width `w`, height `h`. |
 | `art.dim` | 0–0.9: how much an emblem is darkened behind the time (default 0.5). |
 | `art.cat` | `false` hides the Classic cat. |
+| `sound.file`, `sound.volume` | Optional tune for the play button on the bubble (next to ⚙). `volume` 0–1, default 0.8. Needs app v2.12.0 or later. |
 | `art.readout` | `lcd` (faces only): an LCD-style readout with the date and an IN / BREAK / DONE / WEEK strip. Needs app v2.11.0 or later. |
 
 ## How it is published

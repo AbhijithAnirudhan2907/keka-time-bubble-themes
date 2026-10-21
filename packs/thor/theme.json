@@ -1,0 +1,37 @@
+{
+  "name": "Thor",
+  "version": 1,
+  "description": "Thor in icy blue with the lightning crackling. Throws Mjölnir to move the bubble.",
+  "tags": [
+    "marvel",
+    "thor",
+    "avengers",
+    "blue",
+    "light",
+    "face",
+    "travel"
+  ],
+  "style": "watch",
+  "move": "lightning",
+  "colors": {
+    "bg": "#eef1f6",
+    "surface": "#e2e8f0",
+    "edge": "#c3cfdd",
+    "text": "#13233b",
+    "muted": "#44566f",
+    "faint": "#8796ab",
+    "track": "#d3dce8",
+    "accent": "#2f78c4",
+    "warn": "#d9822b",
+    "bad": "#d64545",
+    "info": "#3f8fe0",
+    "gold": "#b98f1c"
+  },
+  "art": {
+    "image": "art.webp",
+    "kind": "face",
+    "cat": false,
+    "slot": { "x": 6, "y": 76, "w": 88, "h": 18 },
+    "readout": "lcd"
+  }
+}

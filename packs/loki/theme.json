@@ -1,0 +1,41 @@
+{
+  "name": "Loki",
+  "version": 1,
+  "description": "Loki, God of Stories, on the throne among the green time-threads, which shimmer. Weaves the bubble along time threads.",
+  "tags": [
+    "marvel",
+    "loki",
+    "green",
+    "tva",
+    "face",
+    "travel"
+  ],
+  "style": "watch",
+  "move": "threads",
+  "colors": {
+    "bg": "#050a07",
+    "surface": "#0c1610",
+    "edge": "#17331f",
+    "text": "#ffffff",
+    "muted": "#b8d8c0",
+    "faint": "#5e7c66",
+    "track": "#13261a",
+    "accent": "#3dff7a",
+    "warn": "#ffc35a",
+    "bad": "#ff5a5a",
+    "info": "#7cffc0",
+    "gold": "#f2c14e"
+  },
+  "art": {
+    "image": "art.webp",
+    "kind": "face",
+    "cat": false,
+    "slot": {
+      "x": 6,
+      "y": 75,
+      "w": 88,
+      "h": 19
+    },
+    "readout": "lcd"
+  }
+}

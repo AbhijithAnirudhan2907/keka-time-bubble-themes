@@ -1,14 +1,15 @@
 {
   "name": "Miles Morales",
-  "version": 2,
-  "description": "Miles Morales watch face with dial numerals.",
+  "version": 3,
+  "description": "Miles Morales watch face with dial numerals. The eyes blink.",
   "tags": [
     "marvel",
     "spider-man",
     "miles",
     "red",
     "watch",
-    "tune"
+    "tune",
+    "blink"
   ],
   "style": "watch",
   "colors": {
@@ -26,7 +27,7 @@
     "gold": "#f5b324"
   },
   "art": {
-    "image": "art.jpg",
+    "image": "art.webp",
     "kind": "face",
     "slot": {
       "x": 8,

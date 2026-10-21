@@ -1,14 +1,15 @@
 {
   "name": "Spider-Man Casio",
-  "version": 3,
-  "description": "Casio-style Spider-Man face with an LCD readout: date, effective time, and in / break / done / week.",
+  "version": 4,
+  "description": "Casio-style Spider-Man face with an LCD readout: date, effective time, and in / break / done / week. The eyes blink.",
   "tags": [
     "marvel",
     "spider-man",
     "casio",
     "red",
     "watch",
-    "tune"
+    "tune",
+    "blink"
   ],
   "style": "watch",
   "colors": {
@@ -26,7 +27,7 @@
     "gold": "#f5b324"
   },
   "art": {
-    "image": "art.jpg",
+    "image": "art.webp",
     "kind": "face",
     "slot": {
       "x": 6,

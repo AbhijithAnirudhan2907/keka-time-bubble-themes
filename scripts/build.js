@@ -108,7 +108,7 @@ function tool() {
 }
 function thumb(t, src, dest) {
   if (t === 'ffmpeg') execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', src, '-vf', 'scale=160:-2', '-q:v', '5', dest]);
-  else execFileSync(t, [src, '-strip', '-resize', '160x', '-quality', '78', dest]);
+  else execFileSync(t, [src + '[0]', '-strip', '-resize', '160x', '-quality', '78', dest]); // [0]: first frame of an animated WebP
 }
 
 const ids = fs.readdirSync(packsDir).filter((f) => fs.statSync(path.join(packsDir, f)).isDirectory()).sort();
@@ -127,7 +127,14 @@ const themes = results.map((r) => {
   fs.mkdirSync(dest, { recursive: true });
   r.files.forEach((f) => fs.copyFileSync(path.join(packsDir, r.id, f.name), path.join(dest, f.name)));
   let thumbPath = null;
-  if (r.image && t) { thumbPath = 'thumbs/' + r.id + '.jpg'; thumb(t, r.image, path.join(out, thumbPath)); }
+  if (r.image && t) {
+    thumbPath = 'thumbs/' + r.id + '.jpg';
+    try { thumb(t, r.image, path.join(out, thumbPath)); } catch (e) {
+      if (requireThumbs) throw e;
+      console.warn('packs/' + r.id + ': no preview (' + t + ' cannot read this image; ffmpeg cannot read animated WebP)');
+      thumbPath = null;
+    }
+  }
   return {
     id: r.id, name: r.t.name, version: r.t.version, description: r.t.description || '', tags: r.t.tags || [],
     style: r.t.style || null, kind: r.t.art ? r.t.art.kind : null, colors: r.t.colors || {},

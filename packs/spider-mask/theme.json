@@ -1,13 +1,14 @@
 {
   "name": "Spider-Man Mask",
-  "version": 2,
-  "description": "Spider-Man mask emblem behind the time, red ring.",
+  "version": 3,
+  "description": "Spider-Man mask emblem behind the time, red ring. The eyes blink.",
   "tags": [
     "marvel",
     "spider-man",
     "red",
     "emblem",
-    "tune"
+    "tune",
+    "blink"
   ],
   "style": "classic",
   "colors": {
@@ -25,7 +26,7 @@
     "gold": "#f5b324"
   },
   "art": {
-    "image": "art.jpg",
+    "image": "art.webp",
     "kind": "emblem",
     "cat": false,
     "dim": 0.5

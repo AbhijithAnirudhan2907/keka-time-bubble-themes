@@ -1,0 +1,34 @@
+{
+  "name": "Golden Chameleon",
+  "version": 1,
+  "description": "Yellow chameleon with big blue eyes on a branch, the time above it.",
+  "tags": [
+    "animal",
+    "chameleon",
+    "yellow",
+    "cute",
+    "face"
+  ],
+  "style": "watch",
+  "colors": {
+    "bg": "#000000",
+    "surface": "#0e0e0b",
+    "edge": "#2a2610",
+    "text": "#ffffff",
+    "muted": "#d8d2a8",
+    "faint": "#77714f",
+    "track": "#24210f",
+    "accent": "#f2d21b",
+    "warn": "#f5a524",
+    "bad": "#ff5a4f",
+    "info": "#3ba7e8",
+    "gold": "#f2d21b"
+  },
+  "art": {
+    "image": "art.jpg",
+    "kind": "face",
+    "cat": false,
+    "slot": { "x": 8, "y": 9, "w": 84, "h": 24 },
+    "readout": "lcd"
+  }
+}

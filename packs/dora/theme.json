@@ -1,0 +1,43 @@
+{
+  "name": "Dora & Boots",
+  "version": 1,
+  "description": "Dora and Boots lying in the daisies, blinking up at you. Her Map draws the trail to a red X and the bubble hops along it: ¡Vámonos! (app 2.19.0+).",
+  "tags": [
+    "dora",
+    "boots",
+    "cartoon",
+    "kids",
+    "flowers",
+    "light",
+    "face",
+    "travel"
+  ],
+  "style": "watch",
+  "move": "map",
+  "colors": {
+    "bg": "#fff6e8",
+    "surface": "#ffecd2",
+    "edge": "#f2cfa0",
+    "text": "#3a1f12",
+    "muted": "#7a4a2a",
+    "faint": "#b38a66",
+    "track": "#f6dcc0",
+    "accent": "#e0458f",
+    "warn": "#f08a24",
+    "bad": "#d93a3a",
+    "info": "#7b4fd6",
+    "gold": "#e3a51b"
+  },
+  "art": {
+    "image": "art.webp",
+    "kind": "face",
+    "cat": false,
+    "slot": {
+      "x": 6,
+      "y": 76,
+      "w": 88,
+      "h": 18
+    },
+    "readout": "lcd"
+  }
+}

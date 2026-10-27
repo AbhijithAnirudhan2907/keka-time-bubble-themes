@@ -1,0 +1,42 @@
+{
+  "name": "Moon Knight",
+  "version": 1,
+  "description": "Moon Knight under the crescent moon in pouring rain, eyes glowing. Throws a crescent dart through the rain and glides after it (app 2.19.0+).",
+  "tags": [
+    "marvel",
+    "moon knight",
+    "night",
+    "rain",
+    "silver",
+    "face",
+    "travel"
+  ],
+  "style": "watch",
+  "move": "crescent",
+  "colors": {
+    "bg": "#07090f",
+    "surface": "#0e131d",
+    "edge": "#1f2a3a",
+    "text": "#ffffff",
+    "muted": "#c4cee0",
+    "faint": "#6b7890",
+    "track": "#182131",
+    "accent": "#dfe8ff",
+    "warn": "#ffc35a",
+    "bad": "#ff5a5a",
+    "info": "#9cc4ff",
+    "gold": "#d6c08a"
+  },
+  "art": {
+    "image": "art.webp",
+    "kind": "face",
+    "cat": false,
+    "slot": {
+      "x": 6,
+      "y": 76,
+      "w": 88,
+      "h": 18
+    },
+    "readout": "lcd"
+  }
+}

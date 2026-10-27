@@ -1,0 +1,43 @@
+{
+  "name": "Joker",
+  "version": 1,
+  "description": "Why so serious? The Joker under a failing cell light, dust drifting in the beam. Deals the bubble across the screen in a burst of cards (app 2.19.0+).",
+  "tags": [
+    "dc",
+    "joker",
+    "batman",
+    "villain",
+    "green",
+    "purple",
+    "face",
+    "travel"
+  ],
+  "style": "watch",
+  "move": "cards",
+  "colors": {
+    "bg": "#06090b",
+    "surface": "#0d1412",
+    "edge": "#1d2f26",
+    "text": "#f4f7f2",
+    "muted": "#b9d3b5",
+    "faint": "#5f7a63",
+    "track": "#142019",
+    "accent": "#62d65a",
+    "warn": "#ffb347",
+    "bad": "#e8384f",
+    "info": "#b07cff",
+    "gold": "#e0c060"
+  },
+  "art": {
+    "image": "art.webp",
+    "kind": "face",
+    "cat": false,
+    "slot": {
+      "x": 6,
+      "y": 76,
+      "w": 88,
+      "h": 18
+    },
+    "readout": "lcd"
+  }
+}

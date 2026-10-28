@@ -83,6 +83,9 @@ function check(id) {
     if (a.dim != null && !(typeof a.dim === 'number' && a.dim >= 0 && a.dim <= 0.9)) errs.push('art.dim: 0 to 0.9');
     if (a.cat != null && typeof a.cat !== 'boolean') errs.push('art.cat: true or false');
     if (a.readout != null && a.readout !== 'lcd') errs.push('art.readout: lcd (or leave it out)');
+    if (a.mouth != null && !(Array.isArray(a.mouth) && a.mouth.length >= 2 && a.mouth.length <= 8 &&
+      a.mouth.every((p) => Array.isArray(p) && p.length === 2 && p.every((v) => typeof v === 'number' && v >= 0 && v <= 100))))
+      errs.push('art.mouth: 2 to 8 [x, y] points in %, along the closed lips, left to right (app 2.26.0+)');
     if (a.hue != null) { // colour cycle (app 2.25.0+; older apps ignore it): seconds 3-600, keep = [x, y, rx, ry] ovals in %
       const pc = (v) => typeof v === 'number' && v >= 0 && v <= 100;
       if (!(typeof a.hue.seconds === 'number' && a.hue.seconds >= 3 && a.hue.seconds <= 600)) errs.push('art.hue.seconds: 3 to 600');

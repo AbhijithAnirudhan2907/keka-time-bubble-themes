@@ -1,7 +1,7 @@
 {
   "name": "Golden Chameleon",
-  "version": 3,
-  "description": "Yellow chameleon with big blue eyes on a branch, the time above it. It slowly changes colour (app 2.25.0+), and its tongue catches a fly to move the bubble.",
+  "version": 4,
+  "description": "Yellow chameleon on a branch that slowly changes colour. To move the bubble it opens its mouth and its tongue catches a fly.",
   "tags": [
     "animal",
     "chameleon",
@@ -53,7 +53,29 @@
           3.9
         ]
       ]
-    }
+    },
+    "mouth": [
+      [
+        46,
+        63.6
+      ],
+      [
+        54,
+        63.2
+      ],
+      [
+        62,
+        62.1
+      ],
+      [
+        70,
+        60.8
+      ],
+      [
+        77,
+        59.6
+      ]
+    ]
   },
   "move": "tongue"
 }

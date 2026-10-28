@@ -18,7 +18,9 @@ const requireThumbs = process.argv.includes('--require-thumbs');
 // Same limits as the app (src-tauri/src/main.rs, src/themes.js in keka-time-bubble).
 const ID = /^[a-z0-9-]{1,40}$/;
 const JSON_MAX = 64 * 1024;
-const IMAGE_MAX = 2 * 1024 * 1024;
+// The app hands art to CSS as a base64 data: URL (a third bigger), and Chromium drops CSS URLs over
+// 2M characters: a picture over ~1.5 MB would not show in apps before 2.19.1.
+const IMAGE_MAX = 1450 * 1024;
 const SOUND_MAX = 1536 * 1024;
 const SURFACE = ['bg', 'surface', 'edge', 'text', 'muted', 'faint', 'track'];
 const ACCENT = ['accent', 'warn', 'bad', 'info', 'gold'];
@@ -72,7 +74,7 @@ function check(id) {
     else {
       image = path.join(dir, a.image);
       const b = fs.readFileSync(image);
-      if (b.length > IMAGE_MAX) errs.push('art.image: over 2 MB');
+      if (b.length > IMAGE_MAX) errs.push('art.image: over 1.45 MB (older apps cannot show it; shrink it)');
       if (!imageType(b)) errs.push('art.image: not a real JPG, PNG or WebP');
       files.push({ name: a.image, size: b.length });
     }

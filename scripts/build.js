@@ -83,6 +83,12 @@ function check(id) {
     if (a.dim != null && !(typeof a.dim === 'number' && a.dim >= 0 && a.dim <= 0.9)) errs.push('art.dim: 0 to 0.9');
     if (a.cat != null && typeof a.cat !== 'boolean') errs.push('art.cat: true or false');
     if (a.readout != null && a.readout !== 'lcd') errs.push('art.readout: lcd (or leave it out)');
+    if (a.hue != null) { // colour cycle (app 2.25.0+; older apps ignore it): seconds 3-600, keep = [x, y, rx, ry] ovals in %
+      const pc = (v) => typeof v === 'number' && v >= 0 && v <= 100;
+      if (!(typeof a.hue.seconds === 'number' && a.hue.seconds >= 3 && a.hue.seconds <= 600)) errs.push('art.hue.seconds: 3 to 600');
+      if (a.hue.keep != null && !(Array.isArray(a.hue.keep) && a.hue.keep.length <= 6 && a.hue.keep.every((k) => Array.isArray(k) && k.length === 4 && k.every(pc))))
+        errs.push('art.hue.keep: up to 6 [x, y, rx, ry] in %');
+    }
   }
   if (t.sound != null) {
     const sf = t.sound.file;

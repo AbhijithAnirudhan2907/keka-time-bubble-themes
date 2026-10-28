@@ -1,14 +1,15 @@
 {
   "name": "Golden Chameleon",
-  "version": 2,
-  "description": "Yellow chameleon with big blue eyes on a branch, the time above it. Its tongue catches a fly to move the bubble.",
+  "version": 3,
+  "description": "Yellow chameleon with big blue eyes on a branch, the time above it. It slowly changes colour (app 2.25.0+), and its tongue catches a fly to move the bubble.",
   "tags": [
     "animal",
     "chameleon",
     "yellow",
     "cute",
     "face",
-    "travel"
+    "travel",
+    "colour"
   ],
   "style": "watch",
   "colors": {
@@ -35,7 +36,24 @@
       "w": 84,
       "h": 24
     },
-    "readout": "lcd"
+    "readout": "lcd",
+    "hue": {
+      "seconds": 20,
+      "keep": [
+        [
+          46.6,
+          57.5,
+          7.3,
+          4.1
+        ],
+        [
+          75.7,
+          51.1,
+          6.8,
+          3.9
+        ]
+      ]
+    }
   },
   "move": "tongue"
 }

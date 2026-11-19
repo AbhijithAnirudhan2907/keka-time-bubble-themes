@@ -1,0 +1,43 @@
+{
+  "name": "Harry Potter",
+  "version": 1,
+  "description": "Harry Potter watercolor portrait card with gold and teal spellwork. A moving wand leaves a gold sparkle trail (app 2.28.2+).",
+  "style": "watch",
+  "font": "Georgia, serif",
+  "colors": {
+    "bg": "#101d27",
+    "surface": "#182b36",
+    "edge": "#976e35",
+    "text": "#fff5dc",
+    "muted": "#e2d1ad",
+    "faint": "#8c9da3",
+    "track": "#294351",
+    "accent": "#ffc267",
+    "warn": "#f3a344",
+    "bad": "#e75c60",
+    "info": "#6ad1df",
+    "gold": "#ffd782"
+  },
+  "art": {
+    "image": "art.jpg",
+    "kind": "face",
+    "cat": false,
+    "dim": 0.06,
+    "slot": {
+      "x": 9,
+      "y": 68,
+      "w": 82,
+      "h": 18
+    }
+  },
+  "move": "wand",
+  "tags": [
+    "harry potter",
+    "magic",
+    "wand",
+    "gold",
+    "teal",
+    "face",
+    "travel"
+  ]
+}
